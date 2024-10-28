@@ -2,8 +2,6 @@ name: Mautic tests and validations
 
 on:
   push:
-    branches:
-      - '[0-9].*'
   pull_request:
   merge_group:
   schedule:
@@ -21,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['8.1', '8.2', '8.3']
+        php-versions: ['8.1', '8.2', '8.3', '8.4']
         db-types: ['mysql', 'mariadb']
 
     name: PHPUnit ${{ matrix.php-versions }} ${{ matrix.db-types }}
